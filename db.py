@@ -1,8 +1,6 @@
 import sqlite3
 from sqlite3 import Error
 
-DB = "mock.db"
-
 
 def create_connection(db_file):
     """ create a database connection to a SQLite database """
@@ -15,8 +13,23 @@ def create_connection(db_file):
         print(e)
 
 
-def query_year(conn: sqlite3.Connection, year: int):
-    q = f"SELECT * FROM chemicals WHERE year = {year}"
+def query_year(conn: sqlite3.Connection, year: int, country_id: int):
+    q = f"""
+    SELECT year, name, carbon, phosphorus, nitrogen, iron
+    FROM chemicals as ch
+    INNER JOIN countries AS co ON co.id = ch.country_id
+    WHERE year = {year}
+    AND country_id = {country_id};
+    """
+
+    return query(conn, q, True)
+
+
+def query_country(conn: sqlite3.Connection, country_id: int):
+    q = f"""
+        SELECT name
+        FROM countries WHERE id = {country_id}
+        LIMIT 1;"""
     return query(conn, q, True)
 
 
@@ -34,9 +47,11 @@ def query(conn: sqlite3.Connection, q: str, debug=False):
 
 
 if __name__ == '__main__':
+    DB = "chemicals.db"
     conn = create_connection(DB)
     with conn:
         print("Connection open")
         rows = query_year(conn, 2019)
+        print(rows)
     print("Closing connection")
     conn.close()
