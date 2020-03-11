@@ -51,7 +51,7 @@ if __name__ == '__main__':
     conn = create_connection(DB)
     with conn:
         print("Connection open")
-        rows = query_year(conn, 2019)
+        rows = query_year(conn, 2019, 1)
         print(rows)
     print("Closing connection")
     conn.close()
