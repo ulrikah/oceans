@@ -3,11 +3,13 @@ import argparse
 
 import db
 
+import pdb
+
 DB = "chemicals.db"
 
 
 class Client:
-    def __init__(self, ip="127.0.0.1", port=5005):
+    def __init__(self, ip="127.0.0.1", port=8000):
         self.ip = ip
         self.port = int(port)
         self.udp_client = udp_client.SimpleUDPClient(self.ip, self.port)
@@ -20,11 +22,22 @@ class Client:
 client = Client()
 
 
+def scale(x, a, b, c, d, decis=3, clip=True):
+    if clip:
+        if x < a:
+            return a
+        if x > b:
+            return b
+    y = (x - a) / (b - a) * (d - c) + c
+    return round(y, decis)
+
+
 def year_handler(route, year):
     print(f"[{route}] ~ {year}")
     with db.create_connection(DB) as c:
         res = db.query_year(c, year, client.country_id)[0]
-        client.send(res, "/chemicals")
+        chemicals = res[2:]
+        client.send(chemicals, "/chemicals")
 
 
 def country_handler(route, country_id: int):
@@ -44,10 +57,11 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
-    # routes = ["/year", "/country"]
     dispatcher = dispatcher.Dispatcher()
     dispatcher.map("/year", year_handler)
     dispatcher.map("/country_id", country_handler)
+
+    dispatcher.map("/Note*", print)
 
     server = osc_server.ThreadingOSCUDPServer(
         (args.ip, args.port), dispatcher
