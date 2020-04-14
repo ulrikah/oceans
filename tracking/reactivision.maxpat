@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1314.0, 79.0, 1212.0, 967.0 ],
+		"rect" : [ 1314.0, 79.0, 838.0, 911.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,35 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
+					"id" : "obj-14",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 131.0, 118.0, 150.0, 18.0 ],
+					"text" : "bangs at frame updates"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 102.25, 115.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 144.0, 315.0, 61.0, 20.0 ],
-					"text" : "print UPD"
+					"patching_rect" : [ 70.25, 161.0, 61.0, 20.0 ],
+					"text" : "s markers"
 				}
 
 			}
@@ -326,7 +349,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 221.0, 414.0, 66.0, 20.0 ],
+					"patching_rect" : [ 251.0, 414.0, 66.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -345,8 +368,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 221.0, 388.0, 46.0, 20.0 ],
-					"text" : "route 4"
+					"patching_rect" : [ 251.0, 388.0, 46.0, 20.0 ],
+					"text" : "route 2"
 				}
 
 			}
@@ -358,7 +381,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 221.0, 510.0, 66.0, 77.0 ]
+					"patching_rect" : [ 251.0, 510.0, 66.0, 77.0 ]
 				}
 
 			}
@@ -366,10 +389,10 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 40.25, 52.0, 51.0, 20.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 70.25, 52.0, 51.0, 20.0 ],
 					"text" : "tracking"
 				}
 
@@ -652,7 +675,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 131.0, 414.0, 66.0, 20.0 ],
+					"patching_rect" : [ 161.0, 414.0, 66.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -671,7 +694,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 131.0, 388.0, 46.0, 20.0 ],
+					"patching_rect" : [ 161.0, 388.0, 46.0, 20.0 ],
 					"text" : "route 1"
 				}
 
@@ -684,7 +707,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 131.0, 510.0, 66.0, 77.0 ]
+					"patching_rect" : [ 161.0, 510.0, 66.0, 77.0 ]
 				}
 
 			}
@@ -966,7 +989,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 40.0, 414.0, 66.0, 20.0 ],
+					"patching_rect" : [ 70.0, 414.0, 66.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -985,7 +1008,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 40.0, 388.0, 46.0, 20.0 ],
+					"patching_rect" : [ 70.0, 388.0, 46.0, 20.0 ],
 					"text" : "route 0"
 				}
 
@@ -997,20 +1020,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 40.0, 288.5, 53.0, 20.0 ],
-					"text" : "r update"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"id" : "obj-17",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 112.5, 71.0, 233.0, 22.0 ],
-					"text" : "id | horizontal | vertical | timestamp"
+					"patching_rect" : [ 70.0, 288.5, 59.0, 20.0 ],
+					"text" : "r markers"
 				}
 
 			}
@@ -1022,34 +1033,22 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 40.0, 510.0, 66.0, 77.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-33",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 40.25, 72.0, 55.0, 20.0 ],
-					"text" : "s update"
+					"patching_rect" : [ 70.0, 510.0, 66.0, 77.0 ]
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-2", 0 ]
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-2", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"order" : 1,
-					"source" : [ "obj-21", 0 ]
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -1064,7 +1063,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-73", 0 ],
-					"order" : 3,
+					"order" : 2,
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -1072,7 +1071,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-79", 0 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -1143,15 +1142,33 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "tracking.maxpat",
-				"bootpath" : "~/fag/mct4031-applied/tracking",
+				"bootpath" : "~/fag/mct4031-applied/oceans/tracking",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "timestamp.js",
-				"bootpath" : "~/fag/mct4031-applied/tracking",
+				"name" : "tracking.js",
+				"bootpath" : "~/fag/mct4031-applied/oceans/tracking",
 				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.monitor.maxpat",
+				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "resize_n4m_monitor_patcher.js",
+				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fit_jweb_to_bounds.js",
+				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
