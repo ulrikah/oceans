@@ -201,8 +201,9 @@ const outputTrackedObjects = (tracked_objects) => {
 
 const routeXY = (route, x, y) => Max.outlet(route, normalize(x), normalize(y))
 
-// scale to 0-127 and invert to display the rigth way
-const normalize = (x) => Math.abs(127 - parseInt(map(x, 0, 1, 0, 127)));
+
+// scale to 0-126 and invert to display the right way
+const normalize = (x) => Math.abs(126 - parseInt(map(x, 0, 1, 0, 126)));
 
 const map = (value, a, b, c, d) => (value - a) * (d - c) / (b - a) + c;
 
