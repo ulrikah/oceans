@@ -1,6 +1,7 @@
 # Custom
 .DS_Store
 *.db
+190516_m2b_marine_biota.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
