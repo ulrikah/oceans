@@ -203,7 +203,21 @@ const routeXY = (route, x, y) => Max.outlet(route, normalize(x), normalize(y))
 
 
 // scale to 0-126 and invert to display the right way
-const normalize = (x) => Math.abs(126 - parseInt(map(x, 0, 1, 0, 126)));
+// snap makes it easier to reach the ends since the markers are difficult to track all the way
+const normalize = (x, invert=false, snap=1.6) => {
+    x -= 0.5
+    x *= snap
+    x += 0.5
+    x = clip(x, 0, 1);
+    x = map(x, 0, 1, 0, 126);
+    if (invert) { x = Math.abs(126 - parseInt(x))}
+    return Math.round(x);
+};
 
 const map = (value, a, b, c, d) => (value - a) * (d - c) / (b - a) + c;
-
+const clip = (value, a, b) => {
+    if (b < a) { return value } // error
+    if (value < a) { return a }
+    else if (value > b) { return b }
+    else { return value }
+}
