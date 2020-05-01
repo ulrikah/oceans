@@ -3,7 +3,6 @@ import argparse
 
 import db
 
-import pdb
 
 DB = "chemicals.db"
 
