@@ -29,9 +29,7 @@ python debug.py # starts a debug script that mocks user interaction
 
 ## Using the M4L device
 
-Drag `OceansSonification.amxd` onto a MIDI track in Ableton Live and update the parameters as shown in this video.
-
-<video width="640" height="480" controls align="middle"><source src="https://docs.google.com/uc?export=download&id=13lhB8_vazddzqlxZ_mYx5cIBaO8RqH-k" type="video/mp4"></video>
+Drag `OceansSonification.amxd` onto a MIDI track in Ableton Live and update the parameters as shown in [this video](https://docs.google.com/uc?export=download&id=13lhB8_vazddzqlxZ_mYx5cIBaO8RqH-k).
 
 If the Python scripts are running and it is connected at UDP port 8000, you should see the visual indicator in the M4L device.
 
