@@ -33,7 +33,7 @@ def scale(x, a, b, c, d, decis=3, clip=True):
 
 
 def year_handler(route, year):
-    print(f"[{route}] ~ {year}")
+    # print(f"[{route}] ~ {year}")
     with db.create_connection(DB) as c:
         res = db.query_year(c, year, client.country_id)[0]
         chemicals = res[2:]
